@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일\test">
+      <UniqueIdentifier>{6f78a22f-6b63-4011-a130-3e5b774d841e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\test">
+      <UniqueIdentifier>{cad3ed04-bb5e-44a4-aabf-57c6454ba4eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\src">
+      <UniqueIdentifier>{8f2fff08-0ea4-49d0-bbb4-655a4830715e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\include">
+      <UniqueIdentifier>{1ec560b1-7bac-44f3-88cc-9a915b6fe929}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\include\utils">
+      <UniqueIdentifier>{e1805864-db8d-49c9-bc14-f1afcaab1829}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\include\utils\mutils">
+      <UniqueIdentifier>{4db4336c-b354-4de3-aaf3-d786495bc34a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\deepsocket.h">
+      <Filter>헤더 파일\include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\types.h">
+      <Filter>헤더 파일\include</Filter>
+    </ClInclude>
+    <ClInclude Include="test\line.h">
+      <Filter>헤더 파일\test</Filter>
+    </ClInclude>
+    <ClInclude Include="test\p_echo.h">
+      <Filter>헤더 파일\test</Filter>
+    </ClInclude>
+    <ClInclude Include="test\p_flood.h">
+      <Filter>헤더 파일\test</Filter>
+    </ClInclude>
+    <ClInclude Include="test\p_datagram.h">
+      <Filter>헤더 파일\test</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gatesocket.h">
+      <Filter>헤더 파일\include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\session.h">
+      <Filter>헤더 파일\include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\utils\mutils\handle.h">
+      <Filter>헤더 파일\include\utils\mutils</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="test\test.cc">
+      <Filter>소스 파일\test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\deepsocket.cc">
+      <Filter>소스 파일\src</Filter>
+    </ClCompile>
+    <ClCompile Include="test\line.cc">
+      <Filter>소스 파일\test</Filter>
+    </ClCompile>
+    <ClCompile Include="test\p_echo.cc">
+      <Filter>소스 파일\test</Filter>
+    </ClCompile>
+    <ClCompile Include="test\p_flood.cc">
+      <Filter>소스 파일\test</Filter>
+    </ClCompile>
+    <ClCompile Include="test\p_datagram.cc">
+      <Filter>소스 파일\test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\types.cc">
+      <Filter>소스 파일\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gatesocket.cc">
+      <Filter>소스 파일\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
