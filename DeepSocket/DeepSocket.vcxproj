@@ -19,9 +19,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="include\utils\mutils\src\win64\netaddress.cc" />
+    <ClCompile Include="include\utils\mutils\src\win64\udpsocket.cc" />
+    <ClCompile Include="include\utils\mutils\src\win64\wsa_support.cc" />
     <ClCompile Include="src\deepsocket.cc" />
     <ClCompile Include="src\gatesocket.cc" />
+    <ClCompile Include="src\protocol.cc" />
+    <ClCompile Include="src\rx\Receiver.cc" />
     <ClCompile Include="src\types.cc" />
+    <ClCompile Include="test\addrtest.cc" />
     <ClCompile Include="test\line.cc" />
     <ClCompile Include="test\p_datagram.cc" />
     <ClCompile Include="test\p_echo.cc" />
@@ -31,9 +37,16 @@
   <ItemGroup>
     <ClInclude Include="include\deepsocket.h" />
     <ClInclude Include="include\gatesocket.h" />
+    <ClInclude Include="include\protocol.h" />
+    <ClInclude Include="include\rx\receiver.h" />
     <ClInclude Include="include\session.h" />
     <ClInclude Include="include\types.h" />
     <ClInclude Include="include\utils\mutils\handle.h" />
+    <ClInclude Include="include\utils\mutils\netaddress.h" />
+    <ClInclude Include="include\utils\mutils\src\win64\wsa_support.h" />
+    <ClInclude Include="include\utils\mutils\udpsocket.h" />
+    <ClInclude Include="include\utils\mutils\utfconv.h" />
+    <ClInclude Include="test\addrtest.h" />
     <ClInclude Include="test\line.h" />
     <ClInclude Include="test\p_datagram.h" />
     <ClInclude Include="test\p_echo.h" />
@@ -123,7 +136,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
@@ -138,7 +151,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>

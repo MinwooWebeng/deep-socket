@@ -49,21 +49,21 @@ std::tuple<bool, std::string> line()
 	std::cout << "add protocols" << std::endl;
 	//add echo protocol for A peer, and datagram protocol for B peer.
 	if (gatesockaddprotocol(
-		A_gsock, "echo", 
-		PEcho_OnPacketArrive, 
-		PEcho_SendtoRegisterCallback,
+		A_gsock, "echo",
 		PEcho_Open,
-		PEcho_Close) != 0)
+		PEcho_Close,
+		PEcho_OnPacketArrive, 
+		PEcho_SendtoRegisterCallback) != 0)
 	{
 		return std::make_tuple(false, "failed to add echo protocol to gate socket");
 	}
 
 	if (gatesockaddprotocol(
 		B_gsock, "datagram",
-		PDatagram_OnPacketArrive,
-		PDatagram_SendtoRegisterCallback,
 		PDatagram_Open,
-		PDatagram_Close) != 0)
+		PDatagram_Close,
+		PDatagram_OnPacketArrive,
+		PDatagram_SendtoRegisterCallback) != 0)
 	{
 		return std::make_tuple(false, "failed to add datagram protocol to gate socket");
 	}
@@ -120,7 +120,7 @@ std::tuple<bool, std::string> line()
 	std::cout << "datagram sending" << std::endl;
 	//send datagram
 	const char* message = "hello world";
-	if (PDatagram_Sendto(getdscontext(B_dsock), message, strlen(message), 0) != strlen(message))
+	if (PDatagram_Sendto(getdscontext(B_dsock), message, static_cast<int>(strlen(message)), 0) != strlen(message))
 	{
 		return std::make_tuple(false, "failed to send datagram");
 	}

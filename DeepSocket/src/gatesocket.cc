@@ -14,11 +14,41 @@ GateSocket::~GateSocket()
 
 int GateSocket::AddProtocol(
 	const char* name,
-	deepsockonpacketarrcallback_t OnPacketArriveCallback,
-	deepsockregistersendtocallback_t RegisterSendtoCallback,
 	deepsockopencallback_t DeepsockOpenCallback,
-	deepsockclosecallback_t DeepsockCloseCallback)
+	deepsockclosecallback_t DeepsockCloseCallback,
+	deepsockonpacketarrcallback_t OnPacketArriveCallback,
+	deepsockregistersendtocallback_t RegisterSendtoCallback)
 {
+	auto res = protocolTable.emplace(std::make_pair(
+		name, 
+		Protocol(
+			DeepsockOpenCallback, 
+			DeepsockCloseCallback, 
+			OnPacketArriveCallback, 
+			RegisterSendtoCallback
+		)
+	));
+
+	if (res.second) //insertion took place
+	{
+		return 0;
+	}
+
+	//try overwritting.
+	protocolTable.erase(res.first);
+	res = protocolTable.emplace(std::make_pair(
+		name,
+		Protocol(
+			DeepsockOpenCallback,
+			DeepsockCloseCallback,
+			OnPacketArriveCallback,
+			RegisterSendtoCallback
+		)
+	));
+	if (res.second)
+	{
+		return 1;
+	}
 	return -1;
 }
 

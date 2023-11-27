@@ -31,6 +31,21 @@
     <Filter Include="헤더 파일\include\utils\mutils">
       <UniqueIdentifier>{4db4336c-b354-4de3-aaf3-d786495bc34a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\include\rx">
+      <UniqueIdentifier>{75775bdc-d041-4abc-82fc-83998f6ba861}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\include\tx">
+      <UniqueIdentifier>{089bc4e6-73f6-4726-8308-67ab5592fc68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\include\sec">
+      <UniqueIdentifier>{d04c3d65-1213-42ec-9c3c-753a378e5ca0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\src\rx">
+      <UniqueIdentifier>{84fdd31b-66a1-4bfb-9ab8-b46723e21c5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\include\utils\mutils\src">
+      <UniqueIdentifier>{ed04ede8-40bf-468f-8b44-63d831fefe9a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\deepsocket.h">
@@ -60,6 +75,27 @@
     <ClInclude Include="include\utils\mutils\handle.h">
       <Filter>헤더 파일\include\utils\mutils</Filter>
     </ClInclude>
+    <ClInclude Include="include\protocol.h">
+      <Filter>헤더 파일\include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rx\receiver.h">
+      <Filter>헤더 파일\include\rx</Filter>
+    </ClInclude>
+    <ClInclude Include="include\utils\mutils\udpsocket.h">
+      <Filter>헤더 파일\include\utils\mutils</Filter>
+    </ClInclude>
+    <ClInclude Include="include\utils\mutils\netaddress.h">
+      <Filter>헤더 파일\include\utils\mutils</Filter>
+    </ClInclude>
+    <ClInclude Include="include\utils\mutils\utfconv.h">
+      <Filter>헤더 파일\include\utils\mutils</Filter>
+    </ClInclude>
+    <ClInclude Include="test\addrtest.h">
+      <Filter>헤더 파일\test</Filter>
+    </ClInclude>
+    <ClInclude Include="include\utils\mutils\src\win64\wsa_support.h">
+      <Filter>헤더 파일\include\utils\mutils\src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test\test.cc">
@@ -85,6 +121,24 @@
     </ClCompile>
     <ClCompile Include="src\gatesocket.cc">
       <Filter>소스 파일\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\protocol.cc">
+      <Filter>소스 파일\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rx\Receiver.cc">
+      <Filter>소스 파일\src\rx</Filter>
+    </ClCompile>
+    <ClCompile Include="include\utils\mutils\src\win64\udpsocket.cc">
+      <Filter>헤더 파일\include\utils\mutils\src</Filter>
+    </ClCompile>
+    <ClCompile Include="include\utils\mutils\src\win64\netaddress.cc">
+      <Filter>헤더 파일\include\utils\mutils\src</Filter>
+    </ClCompile>
+    <ClCompile Include="test\addrtest.cc">
+      <Filter>소스 파일\test</Filter>
+    </ClCompile>
+    <ClCompile Include="include\utils\mutils\src\win64\wsa_support.cc">
+      <Filter>헤더 파일\include\utils\mutils\src</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

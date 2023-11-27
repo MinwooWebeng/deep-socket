@@ -9,7 +9,7 @@
 int gatesock_genkeypair(const char* type, void* pubkeydest, int* pubkeylen, void* privatekeydest, int* privatekeylen)
 {
 	const char* dummy = "dummy key";
-	int dummy_len = strlen(dummy) + 1;
+	int dummy_len = static_cast<int>(strlen(dummy) + 1);
 	memcpy(pubkeydest, dummy, dummy_len);
 	*pubkeylen = dummy_len;
 	memcpy(privatekeydest, dummy, dummy_len);
@@ -32,13 +32,13 @@ GATESOCKET gatesocket(unsigned short port, const char* domain, void* privatekey,
 }
 int gatesockaddprotocol(
 	GATESOCKET gsock, const char* name,
-	deepsockonpacketarrcallback_t OnPacketArriveCallback,
-	deepsockregistersendtocallback_t RegisterSendtoCallback,
 	deepsockopencallback_t DeepsockOpenCallback,
-	deepsockclosecallback_t DeepsockCloseCallback
+	deepsockclosecallback_t DeepsockCloseCallback,
+	deepsockonpacketarrcallback_t OnPacketArriveCallback,
+	deepsockregistersendtocallback_t RegisterSendtoCallback
 )
 {
-	return gtor(gsock)->AddProtocol(name, OnPacketArriveCallback, RegisterSendtoCallback, DeepsockOpenCallback, DeepsockCloseCallback);
+	return gtor(gsock)->AddProtocol(name, DeepsockOpenCallback, DeepsockCloseCallback, OnPacketArriveCallback, RegisterSendtoCallback);
 }
 int gatesocklisten(GATESOCKET gsock, int backlog)
 {

@@ -4,9 +4,11 @@
 #include <memory>
 #include <map>
 #include <tuple>
+#include <string>
 
 #include "types.h"
 
+#include "protocol.h"
 #include "session.h"
 
 namespace ds
@@ -20,10 +22,10 @@ public:
 
 	int AddProtocol(
 		const char* name,
-		deepsockonpacketarrcallback_t OnPacketArriveCallback,
-		deepsockregistersendtocallback_t RegisterSendtoCallback,
 		deepsockopencallback_t DeepsockOpenCallback,
-		deepsockclosecallback_t DeepsockCloseCallback);
+		deepsockclosecallback_t DeepsockCloseCallback,
+		deepsockonpacketarrcallback_t OnPacketArriveCallback,
+		deepsockregistersendtocallback_t RegisterSendtoCallback);
 
 	int Listen(int backlog);
 	std::tuple<bool, std::shared_ptr<Session>> Accept(); //a copy of shared ptr exists in deepsockTable.
@@ -31,6 +33,7 @@ public:
 
 private:
 	std::map<connectionid, std::shared_ptr<Session>> sessionTable;
+	std::map<std::string, Protocol> protocolTable;
 };
 
 }

@@ -7,11 +7,11 @@ int gatesock_genkeypair(const char* type, void* pubkeydest, int* pubkeylen, void
 
 GATESOCKET gatesocket(unsigned short port, const char* domain, void* privatekey, int privatekeylen, const char* keyType); //only AF_INET or AF_INET6 or both(duel socket)
 int gatesockaddprotocol(
-	GATESOCKET gsock, const char* name, 
-	deepsockonpacketarrcallback_t OnPacketArriveCallback, 
-	deepsockregistersendtocallback_t RegisterSendtoCallback,
+	GATESOCKET gsock, const char* name,
 	deepsockopencallback_t DeepsockOpenCallback,
-	deepsockclosecallback_t DeepsockCloseCallback
+	deepsockclosecallback_t DeepsockCloseCallback,
+	deepsockonpacketarrcallback_t OnPacketArriveCallback, 
+	deepsockregistersendtocallback_t RegisterSendtoCallback
 ); //name must be shorter than 64 bytes, including null.
 int gatesocklisten(GATESOCKET gsock, int backlog);
 SESSIONHANDLE gatesockaccept(GATESOCKET gsock); //this substitutes accept().
