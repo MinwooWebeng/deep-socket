@@ -3,13 +3,12 @@
 namespace ds
 {
 
-GateSocket::GateSocket(unsigned short port, const char* domain, void* privatekey, int privatekeylen, const char* keyType)
-{
-
-}
+GateSocket::GateSocket(const char* localaddr, void* privatekey, int privatekeylen, const char* keyType)
+	: kernel_socket(std::make_shared<mutils::udpSocket>(localaddr))
+{}
 GateSocket::~GateSocket()
 {
-
+	receive_worker->detach();
 }
 
 int GateSocket::AddProtocol(
@@ -54,6 +53,9 @@ int GateSocket::AddProtocol(
 
 int GateSocket::Listen(int backlog)
 {
+	receive_worker = std::make_unique<std::thread>([&]() {
+		
+	});
 	return -1;
 }
 std::tuple<bool, std::shared_ptr<Session>> GateSocket::Accept()

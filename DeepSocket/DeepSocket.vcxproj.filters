@@ -46,6 +46,9 @@
     <Filter Include="헤더 파일\include\utils\mutils\src">
       <UniqueIdentifier>{ed04ede8-40bf-468f-8b44-63d831fefe9a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\include\packet">
+      <UniqueIdentifier>{8e83e40e-e0d8-4a81-af99-2f06411777eb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\deepsocket.h">
@@ -78,9 +81,6 @@
     <ClInclude Include="include\protocol.h">
       <Filter>헤더 파일\include</Filter>
     </ClInclude>
-    <ClInclude Include="include\rx\receiver.h">
-      <Filter>헤더 파일\include\rx</Filter>
-    </ClInclude>
     <ClInclude Include="include\utils\mutils\udpsocket.h">
       <Filter>헤더 파일\include\utils\mutils</Filter>
     </ClInclude>
@@ -95,6 +95,15 @@
     </ClInclude>
     <ClInclude Include="include\utils\mutils\src\win64\wsa_support.h">
       <Filter>헤더 파일\include\utils\mutils\src</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rx\packet_parser.h">
+      <Filter>헤더 파일\include\rx</Filter>
+    </ClInclude>
+    <ClInclude Include="include\packet\packet.h">
+      <Filter>헤더 파일\include\packet</Filter>
+    </ClInclude>
+    <ClInclude Include="include\packet\frame.h">
+      <Filter>헤더 파일\include\packet</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

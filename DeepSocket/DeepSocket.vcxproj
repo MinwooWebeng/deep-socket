@@ -37,8 +37,10 @@
   <ItemGroup>
     <ClInclude Include="include\deepsocket.h" />
     <ClInclude Include="include\gatesocket.h" />
+    <ClInclude Include="include\packet\packet.h" />
+    <ClInclude Include="include\packet\frame.h" />
     <ClInclude Include="include\protocol.h" />
-    <ClInclude Include="include\rx\receiver.h" />
+    <ClInclude Include="include\rx\packet_parser.h" />
     <ClInclude Include="include\session.h" />
     <ClInclude Include="include\types.h" />
     <ClInclude Include="include\utils\mutils\handle.h" />

@@ -5,11 +5,14 @@
 #include <map>
 #include <tuple>
 #include <string>
+#include <thread>
 
 #include "types.h"
 
 #include "protocol.h"
 #include "session.h"
+
+#include "utils/mutils/udpsocket.h"
 
 namespace ds
 {
@@ -17,7 +20,7 @@ namespace ds
 class GateSocket
 {
 public:
-	GateSocket(unsigned short port, const char* domain, void* privatekey, int privatekeylen, const char* keyType);
+	GateSocket(const char* localaddr, void* privatekey, int privatekeylen, const char* keyType);
 	~GateSocket();
 
 	int AddProtocol(
@@ -34,6 +37,11 @@ public:
 private:
 	std::map<connectionid, std::shared_ptr<Session>> sessionTable;
 	std::map<std::string, Protocol> protocolTable;
+
+	std::shared_ptr<mutils::udpSocket> kernel_socket;
+	std::unique_ptr<std::thread> receive_worker;
+
+
 };
 
 }
